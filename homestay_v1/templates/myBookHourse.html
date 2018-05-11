@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block section %}
+
+<section class="tm-white-bg section-padding-bottom" style="margin-top: 70px;">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">房 屋 订 阅 列 表</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+
+
+			<div >
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td>房屋特色介绍</td>
+						<td>价格</td>
+						<td>合计</td>
+						<td>住房时间</td>
+						<td>预定时间</td>
+						<td>操作-取消预定</td>
+						<td>操作-预定支付</td>
+						<td>操作-联系房东</td>
+					</tr>
+					{% for houseBobj in houseBobjs %}
+					<tr>
+						<td><a href="/home/houseDetailShow/?houseid={{houseBobj.house.id}}">{{houseBobj.house.houseFeatureDescript}}</a></td>
+						<td>{{houseBobj.oneprice}}</td>
+						<td>{{houseBobj.allprice}}</td>
+						<td>{{houseBobj.startDate|date:"Y/m/d"}}-{{houseBobj.endDate|date:"Y/m/d"}}</td>
+						<td>{{houseBobj.createTime|date:"Y-m-d H:i:s"}}</td>
+						<td><button class="btn btn-success"><a  href="/home/myBookHourseDelete/?houseBookId={{houseBobj.id}}">取消</a></button></td>
+						<td><button class="btn btn-danger"><a  href="/home/housePaypicture/?houseBookId={{houseBobj.house.id}}">支付</a></button></td>
+						<td><button class="btn btn-group"><a  href="/home/sendEmailHousePeopel/?houseId={{houseBobj.house.id}}">联系房东</a></button></td>
+					</tr>
+					{% endfor %}
+				</table>
+
+
+
+			</div>
+		</div>
+
+	</section>
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}

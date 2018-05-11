@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block section %}
+
+<section class="tm-white-bg section-padding-bottom" style="margin-top: 70px;margin-bottom: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">发 布 房 屋 列 表</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+
+
+			<div >
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td>房屋特色介绍</td>
+						<td>房屋发布时间</td>
+						<td>操作-修改</td>
+						<td>操作-删除</td>
+						<td>状态</td>
+					</tr>
+					{% for house in houses %}
+						<tr>
+							<td><a id="housedesc" class="houseid" values="{{house.id}}" href="/home/houseDetailShow/?houseid={{house.id}}">{{house.houseFeatureDescript}}</a></td>
+							<td>{{house.createTime|date:"Y-m-d H:i:s"}}</td>
+							<td><button class="btn btn-success"><a  href="/home/myPublishHouseUpdate/?houseid={{house.id}}">修改</a></button></td>
+							<td><button class="btn btn-danger"><a  href="/home/myPublishHouseDelete/?houseid={{house.id}}">删除</a></button></td>
+							<td>
+								<div class="switch" data-on="primary" data-off="info">
+									<input type="checkbox" onchange="setStatus(this);" checkboxID="{{house.id}}" name="my-checkbox" checked >
+								</div>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+
+		</div>
+
+	</section>
+{% endblock %}
+<!--houseBookId  Status-->
+
+{% block script %}
+<script>
+	$(function () {
+		$('.houseid').each(function () {
+			var houseid=$(this).attr("values");
+			console.log(houseid)
+			$.ajax({
+                url: "/home/setPushHousePayStatus/",
+                type: "POST",
+
+                data: {
+                    "houseBookId": houseid
+                },
+                // dataType: "json",
+                success:function(arg) {
+                    var data=jQuery.parseJSON(arg);
+                    console.log(data,data["status"])
+					// console.log("test")
+                    if(data["status"]){
+                        $("[checkboxID="+"'"+houseid+"'"+"]").bootstrapSwitch('state', true);
+							// {
+							// 	state:true,
+							// }
+						// )
+					}
+					else{
+                        $("[checkboxID="+"'"+houseid+"'"+"]").bootstrapSwitch('state', false);
+					}
+                },
+                false:function(arg) {
+                    console.log("test1")
+					// alert(arg)
+                }
+            })
+
+        })
+    })
+</script>
+
+<script>
+	function setStatus(checkbox){
+	    // console.log(checkbox);
+	    houseID=$(checkbox).attr('checkboxID');
+
+	    var status=$(checkbox).bootstrapSwitch('state');
+	    console.log(houseID,status)
+		$.ajax({
+                url: "/home/myPublishHouseStatus/",
+                type: "POST",
+
+                data: {
+                    "houseBookId": houseID,
+					"status":status,
+                },
+                dataType: "json",
+                success: function (arg) {
+                    if(!arg){
+                        alert(arg)
+					}
+                },
+                false: function (arg) {
+					 alert(arg)
+                }
+            })
+	}
+</script>
+<!--<script>-->
+	<!--$("input[type='checkbox']").bootstrapSwitch(-->
+	<!--$("[name='my-checkbox']").bootstrapSwitch(-->
+		<!--{-->
+         <!--onText:"已支付",-->
+         <!--offText:"未支付",-->
+         <!--onColor:"success",-->
+         <!--offColor:"danger",-->
+         <!--size:"normal",-->
+         <!--state:false,onSwitchChange:function(event,state){-->
+		    <!--var status=state;-->
+		    <!--var houseBookId=$('#housedesc').attr('values');-->
+		    <!--console.log(houseBookId,status);-->
+
+		     <!--hID=JSON.stringify(houseID);-->
+            <!--$.ajax({-->
+                <!--url: "/home/myPublishHouseStatus/",-->
+                <!--type: "POST",-->
+
+                <!--data: {-->
+                    <!--"houseBookId": houseBookId,-->
+					<!--"status":status,-->
+                <!--},-->
+                <!--dataType: "json",-->
+                <!--success: function (arg) {-->
+                    <!--if(!arg){-->
+                        <!--alert(arg)-->
+					<!--}-->
+                <!--},-->
+                <!--false: function (arg) {-->
+					 <!--alert(arg)-->
+                <!--}-->
+            <!--})-->
+
+        <!--}-->
+		<!--}-->
+
+	<!--);-->
+
+	<!--</script>-->
+
+{% endblock %}

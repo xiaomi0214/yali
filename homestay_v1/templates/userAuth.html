@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block section %}
+	<section style="margin-bottom: 300px;margin-top: 120px;">
+		<div class="container " >
+			<div class="row">
+				<legend>用户注册</legend>
+				<form action="/home/userAuth/" method="post" id="form_set">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="真实姓名" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="sex" class="form-control" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="性别" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="birthday" class="form-control" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="出生日期" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="idcardAdress" class="form-control" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="身份证住址(到县/区)" />
+					</div>
+					<div class="form-group">
+						<input  type="text" name="idCard" class="form-control" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="身份证号码">
+					</div>
+					<div class="form-group">
+						<button style="margin-left: 130px;margin-top:40px;"  class="btn btn-danger" type="submit" name="submit">提交</button>
+					</div>
+					<div class="form-group">
+						<p style="font-size: 38px; color: red; margin-left: 500px;">{{msg}}</p>
+
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+{% endblock %}

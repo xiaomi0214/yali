@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+
+
+{% block section %}
+	<section style="margin-bottom: 200px;margin-top: 120px;">
+		<div class="container " >
+			<div class="row">
+				<legend class="">发布房源</legend>
+					<form  action="/home/myPublishHouseUpdate/?houseid={{house.id}}" method="post" class="form-horizontal"  style="margin-top:100px;"   enctype="multipart/form-data">
+				    <fieldset>
+				          <div class="form-group">
+					          <label class="col-sm-2  control-label  test   ">房源类型</label>
+					          <div   class="col-sm-6">
+					            <select name="houseType" class="form-control">
+					              <option value="公寓型住宅" >公寓型住宅</option>
+					              <option value="普通公寓">普通公寓</option>
+					              <option value="酒店式公寓">酒店式公寓</option>
+					              <option value="家庭旅馆">家庭旅馆</option>
+					            </select>
+					          </div>
+				    	    </div>
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test  ">房客住房形式</label>
+					          <div   class="col-sm-6 ">
+					            <select name="zhufangType" class="form-control">
+					              	<option  value="合租">合租</option>
+									<option  value="独租">独租</option>
+					            </select>
+					          </div>
+				    	    </div>
+
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test  ">房客人数</label>
+					          <div   class="col-sm-6 ">
+					            <select name="houseMaxPeople" class="form-control">
+					              <option value="1">1人</option>
+					              <option value="2">2人</option>
+					              <option value="3">3人</option>
+					              <option value="4">4人</option>
+					              <option value="5">5人</option>
+					              <option value="6">6人</option>
+					            </select>
+					          </div>
+				    	    </div>
+
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test  ">卧室数目</label>
+					          <div   class="col-sm-6 ">
+					            <select name="woShiNum" class="form-control">
+					              <option value="0">0间卧室</option>
+					              <option value="1">1间卧室</option>
+					              <option value="2">2间卧室</option>
+					              <option value="3">3间卧室</option>
+					              <option value="4">4间卧室</option>
+					              <option value="5">5间卧室</option>
+					              <option value="6">6间卧室</option>
+					            </select>
+					          </div>
+				    	    </div>
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test  ">双人床铺</label>
+					          <div   class="col-sm-6 ">
+					            <select name="towBed" class="form-control">
+								  <option value="1">0</option>
+					              <option value="1">1</option>
+					              <option value="2">2</option>
+					              <option value="3">3</option>
+					              <option value="4">4</option>
+					              <option value="5">5</option>
+					            </select>
+					          </div>
+				    	    </div>
+
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test  ">单人床铺</label>
+					          <div   class="col-sm-6 ">
+					            <select name="oneBed" class="form-control">
+								  <option value="0">0</option>
+					              <option value="1">1</option>
+					              <option value="2">2</option>
+					              <option value="3">3</option>
+					              <option value="4">4</option>
+					              <option value="5">5</option>
+					            </select>
+					          </div>
+				    	    </div>
+
+				    	    <div class="form-group" >
+					          <label class="col-sm-2  control-label  test">浴室数量</label>
+					          <div   class="col-sm-6 ">
+					            <select name="showerNum" class="form-control">
+									<option value="0">0</option>
+					              <option value="1">1</option>
+					              <option value="2">2</option>
+					              <option value="3">3</option>
+					            </select>
+					          </div>
+				    	    </div>
+
+				    	    	<div class="form-group">
+							          <label class="col-sm-2 control-label test" >房屋住址</label>
+							          <div class="col-sm-6">
+							            <input type="text" name="houseAddr" value="{{house.houseAddr}}" placeholder="请输入详细出租房屋住址" class="form-control">
+							          </div>
+							     </div>
+							<div class="form-group">
+							          <label class="col-sm-2 control-label test" >城市</label>
+							          <div class="col-sm-6">
+							            <input type="text" name="cityAddr" value="{{house.cityAddr}}" placeholder="请输入所在城市" class="form-control">
+							          </div>
+							     </div>
+
+							     <div class="form-group">
+							          <label class="col-sm-2 control-label ">提供的便利设施</label>
+							          <div class="col-sm-6 check_left">
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided"  value="生活必需品">生活必需品
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided" value="无线网络">无线网络
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided" value="电视">电视
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided" value="电脑">电脑
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided" value="空调">空调
+							            </label>
+							         	<label class="checkbox inline">
+							              <input type="checkbox" name="Sheprovided" value="洗衣机">洗衣机
+							            </label>
+							          </div>
+							        </div>
+
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label ">房客使用的区域</label>
+							          <div class="col-sm-6 check_left">
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="userArea" value="厨房">厨房
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="userArea" value="停车位">停车位
+							            </label>
+							          </div>
+							        </div>
+
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label"  style="margin-top:40px;">房屋描述</label>
+							          <div class="col-sm-8 ">
+							            <div class="textarea">
+							                  <textarea name="houseDescript" class="form-control" style="height:80px;"> {{house.houseDescript}}</textarea>
+							            </div>
+							          </div>
+							        </div>
+
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label" style="margin-top:40px;">特色描述</label>
+							          <div class="col-sm-6">
+							            <input type="text" name="houseFeatureDescript" style="width:550px;" value="{{house.houseFeatureDescript}}" placeholder="请用简短的语言叙述你的房间特色(不超过15字)" class="form-control">
+							          </div>
+							     		</div>
+
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label ">房客必须了解的信息</label>
+							          <div class="col-sm-6 check_left">
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="knowInformation" value="需爬楼梯">需爬楼梯
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="knowInformation" value="可能会有噪音">可能会有噪音
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="knowInformation" value="房源里不能停车">房源里不能停车
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="knowInformation" value="房源内有监控或记录设备">房源内有监控或记录设备
+							            </label>
+
+							          </div>
+							        </div>
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label" ></label>
+							          <div class="col-sm-6">
+							            <input type="text" name="otherknowInformation" placeholder="补充说明" class="form-control"  style="height:60px;">
+							          </div>
+							     		</div>
+
+
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label ">房屋守则</label>
+							          <div class="col-sm-6 check_left">
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="banrules" value="不适合儿童">不适合儿童（2-12岁）
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="banrules" value="不适合婴幼儿（2岁以下）">不适合婴幼儿（2岁以下）
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="banrules" value="不适合携带宠物入住">不适合携带宠物入住
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="banrules" value="不允许吸烟">不允许吸烟
+							            </label>
+							            <label class="checkbox inline">
+							              <input type="checkbox" name="banrules" value="不允许举办活动或聚会">不允许举办活动或聚会
+							            </label>
+							          </div>
+							        </div>
+							        <div class="form-group">
+							          <label class="col-sm-2 control-label" ></label>
+							          <div class="col-sm-6">
+							            <input type="text"  name="otherbanrules" placeholder="补充其他守则补充" class="form-control"  style="height:60px;">
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >上传图片</label>
+							        </div>
+									<div class="form-group">
+							          <label class="col-sm-2 control-label" >封面图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="coverPicture" class="btn btn-default"  >
+							          </div>
+							     		</div>
+
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >客厅图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="keTingPicture" class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >主卧图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="zhuWoPicture"  class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >次卧图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="ciWoPicture"  class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >厨房图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="chuFangPicture"  class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >浴室图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="showerPicture"  class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group">
+							          <label class="col-sm-2 control-label" >其他图片</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="file" name="otherPicture"  class="btn btn-default"  >
+							          </div>
+							     		</div>
+							     		<div class="form-group" style="margin-top:40px;">
+							          <label class="col-sm-2 control-label" style="color:#2EC66B;font-size: 20px;">价格</label>
+							          <div class="col-sm-6 check_left">
+							            <input type="text"  name="price" value="{{house.price}}" placeholder="请输入具体的价格/每天" name="place" style="height: 40px;width:50%;"  >
+							          </div>
+							     		</div>
+
+							     		<div class="form-group" style="margin-top:40px;">
+							          <label class="col-sm-2 control-label" ></label>
+							          <div class="col-sm-6 check_left">
+							            <input type="submit"  value="修改确认" class="btn btn-danger"  style="width:80px;;"  />
+										  <p style="color:indianred;margin-left:240px;font-size:18px;margin-top:40px;" class="col-sm-7">{{ msg }}</p>
+										  <!--<button type="button"   class="btn btn-danger" onclick="submit_data();" style="width:100px;height:50px;"  >提交</button>-->
+							          </div>
+							     		</div>
+				    </fieldset>
+			  </form>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+
+	function submit_data() {
+	    // 房屋类型
+        var houseType=$('#houseType').val();
+
+        // //房客租房的形式
+        var zhufangType=$('#zhufangType').val();
+
+		//房客最多人数
+        var houseMaxPeople=$('#houseMaxPeople').val();
+
+        //卧室数目
+        var woShiNum=$('#woShiNum').val();
+
+        //双人床数
+        var towBed=$('#towBed').val();
+
+        //单人床数
+        var oneBed=$('#oneBed').val();
+
+        //浴室的数量
+        var showerNum=$('#showerNum').val();
+
+
+        //房屋的详细地址
+        var houseAddr=$('#houseAddr').val();
+
+        //所在城市地址
+        var cityAddr=$('#cityAddr').val();
+
+
+        //提供的便利设施
+		var chk_value=[];
+				$('input[name="Sheprovided"]:checked').each(function(){
+					chk_value.push($(this).val());
+				});
+		console.log(chk_value);
+
+		//房客使用的区域
+		var userArea=[];
+		$('input[name="userArea"]:checked').each(function () {
+			userArea.push($(this).val())
+        });
+
+		console.log(userArea);
+
+		//房子详细介绍
+		var houseDescript=$('#houseDescript').val();
+
+
+        //房子特别介绍
+		var houseFeatureDescript=$('#houseFeatureDescript').val();
+
+		//房客须知
+		var knowInformation=[];
+		$('input[name="knowInformation"]:checked').each(function () {
+			knowInformation.push($(this).val())
+        });
+		console.log(knowInformation);
+
+        //房客须知补充
+		var otherknowInformation=$('#otherknowInformation').val();
+
+		console.log(otherknowInformation);
+
+		//房屋守则
+		var banrules=[];
+		$('input[name="banrules"]:checked').each(function () {
+			banrules.push($(this).val())
+        });
+		console.log(banrules);
+
+		//房屋守则补充
+		var otherbanrules=$('#otherbanrules').val();
+		console.log(otherbanrules);
+		//图片
+
+		var pictures=[];
+		$('input[name="picture"]').each(function () {
+			pictures.push($(this).val())
+        });
+		console.log(pictures);
+
+		//价格
+		var price=$('#price').val();
+
+		$.fn.stringify = function() {
+		  return JSON.stringify(this);
+		}
+		data={
+		    "houseType":houseType,
+				"zhufangType":zhufangType,
+				"houseMaxPeople":houseMaxPeople,
+				"woShiNum":woShiNum,
+				"towBed":towBed,
+				"oneBed":oneBed,
+				"showerNum":showerNum,
+				"houseAddr":houseAddr,
+				"cityAddr":cityAddr,
+				"chk_value":chk_value,
+				"userArea":userArea,
+				"houseDescript":houseDescript,
+				"houseFeatureDescript":houseFeatureDescript,
+				"knowInformation":knowInformation,
+				"banrules":banrules,
+				"otherbanrules":otherbanrules,
+				"pictures":pictures,
+				"price":price,
+		};
+		// // data=jQuery.getJSON(data);
+		// data=JSON.parse(data.toString());
+        //
+		// // data=JSON.parse(data);
+		dataString=JSON.stringify(data);
+		console.log(dataString);
+		var b={"name":"Mike","sex":"女","age":"29"};
+		$.ajax({
+			url:"/home/publishHouseInfmat/",
+			type:"POST",
+			data:pictures,
+			success:function (arg) {
+				// console.log(arg)
+            },
+            error:function (arg) {
+				// console.log(arg)
+            }
+			}
+		    )
+
+    }
+
+</script>
+{% endblock %}

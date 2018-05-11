@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block section %}
+	<section style="margin-bottom: 300px;margin-top: 120px;">
+		<div class="container " >
+			<div class="row">
+				<legend>发送Email给房东:</legend>
+				<form action="/home/sendEmailHousePeopel/" method="post" id="form_set">
+					<div class="form-group">
+						<textarea class="form-control" rows="8" name="comtent"></textarea>
+					</div>
+					<div class="form-group">
+						<input  type="hidden" name="houseId" value="{{houseId}}">
+					</div>
+
+					<div class="form-group">
+						<button style="margin-left: 130px;margin-top:40px;"  class="btn btn-danger" type="submit" name="submit">发送</button>
+					</div>
+					<div class="form-group">
+						<p style="color: red; font-size: 35px; margin-left: 700px; margin-top: 33px;">{{msg}}</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+{% endblock %}

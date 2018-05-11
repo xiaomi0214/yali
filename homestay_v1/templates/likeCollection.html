@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block section %}
+
+<section class="tm-white-bg section-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">我 的 收 藏 单</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+
+
+			<div class="row">
+				{{ msg}}
+				{% for collectobj in collectobjs %}
+				<div class="col-lg-6">
+				    <div class="tm-home-box-3">
+						<div class="tm-home-box-3-img-container">
+							<!--<a class="houselink" value="{{house.id}}" href="/home/houseDetailShow/?houseid={{house.id}}"><img src="{{ house.imgPath.url }}" style="height: 225px;width:250px;" alt="image" class="img-responsive"></a>-->
+							<a  class="houselink" value="{{collectobj.houseId.id}}" href="/home/houseDetailShow/?houseid={{collectobj.houseId.id}}"><img src="{{ collectobj.houseId.imgPath.url  }}" style="height: 225px;width:250px;" alt="image" class="img-responsive"></a>
+						</div>
+						<div class="tm-home-box-3-info">
+							<p class="tm-home-box-3-description" style="height: 164px;" >
+								{{ collectobj.houseId.houseFeatureDescript }}<br/>
+								<!--{{house.houseFeatureDescript}}<br/>-->
+									<span style="padding-bottom: 5px;">
+										城市:{{collectobj.houseId.cityAddr}}<br/>
+										价格:{{collectobj.houseId.price}}
+									</span>
+
+							</p>
+					        <div class="tm-home-box-2-container">
+								<p  class="tm-home-box-2-link"><i values="{{ collectobj.houseId.id }}" id="clickLike{{ collectobj.houseId.id }}" class="fa fa-heart tm-home-box-2-icon border-right clickLike" onclick="changeLNum(this);"></i></p>
+								<p  class="tm-home-box-2-link"><span id="LikeNum{{collectobj.houseId.id}}"  class="tm-home-box-2-description box-3">{{ collectobj.houseId.Like_num  }}</span></p>
+
+								<!--<p  class="tm-home-box-2-link"><i  class="fa fa-heart tm-home-box-2-icon border-right" ></i></p>-->
+								<!--<p  class="tm-home-box-2-link"><span id="LikeNum" class="tm-home-box-2-description box-3">{{ collectobj.houseId.Like_num }}</span></p>-->
+						</div>
+						</div>
+					</div>
+			    </div>
+
+				{% endfor %}
+
+			</div>
+		</div>
+
+	</section>
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+	function changeLNum(change) {
+
+		var houes=$(change).attr("values");
+		console.log(houes);
+		$.ajax({
+			url:"/home/Collection/",
+			type:"POST",
+			data:{
+			    "houes":houes
+			},
+			success :function (arg) {
+				data=jQuery.parseJSON(arg);
+				//num 表示当前点赞的人数
+				//sign 标记当前的用户是否点赞  0未点赞，1点赞
+				num=data["num"];
+				sign=data["sign"];
+				console.log(num,sign)
+				if(sign)
+				{
+				    console.log("if","1");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:red;"})
+				}
+				else
+				{
+				    console.log("if","0");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:black;"})
+				}
+				$("#LikeNum"+houes).html(num);
+
+            },
+            error:function () {
+
+            }
+			}
+		)
+    }
+    function likeSign () {
+			var houseID=[];
+
+            $('.houselink').each(function () {
+
+		        houseID.push($(this).attr('value'));
+
+            });
+            console.log(houseID);
+            hID=JSON.stringify(houseID);
+            $.ajax({
+				url:"/home/myCollectionStatus/",
+				type:"POST",
+
+				data:{
+				    "hID":hID,
+                },
+				dataType:"json",
+				success:function (arg) {
+				    console.log(arg);
+				    var idList=arg["houseIdList"];
+				    console.log(toString.call(idList));
+				    $('.clickLike').each(function (){
+						if (jQuery.inArray(Number($(this).attr('values')), idList)!=-1) {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:red;"})
+                        }
+                        else {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:black;"})
+                        }
+                    })
+                },
+				error:function (arg) {
+					console.log(arg)
+                }
+			});
+        }
+        $(function() {
+		    var nichen=$('#nichen').html();
+
+		    if (nichen!=""){
+		        likeSign()
+			}
+        })
+
+</script>
+{% endblock %}

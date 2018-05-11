@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+
+{% block section %}
+	<section class="tm-banner">
+		<!-- Flexslider -->
+		<div class="flexslider flexslider-banner">
+		  <ul class="slides">
+			    <li>
+				    <div class="tm-banner-inner">
+						<h1 class="tm-banner-title">Find <span class="tm-yellow-text">The Best</span> Place</h1>
+						<p class="tm-banner-subtitle">For Your Holidays</p>
+						<form action="/home/localHouse/" method="POST">
+							<div style="width:600px;height:100px; margin-top:80px; " >
+								<div class="col-sm-10">
+									<input type="text" style="height:50px;margin-top: 20px;"  class="form-control1"  name="searchCity" placeholder="请输入搜索的城市(西安)" />
+								</div>
+								<div class="col-sm-2">
+									<input type="submit" style="height:50px;margin-top: 20px;width:80px;" class="form-control btn btn-danger" value="查找">
+								</div>
+							</div>
+						</form>
+					</div>
+					<img src="/static/img/banner-1.jpg" alt="Image" />	
+			    </li>
+			    
+		    	<li>
+				    <div class="tm-banner-inner">
+								<h1 class="tm-banner-title">Lorem <span class="tm-yellow-text">Ipsum</span> Dolor</h1>
+								<p class="tm-banner-subtitle">Wonderful Destinations</p>
+								<form action="/home/localHouse/" method="POST">
+									<div style="width:600px;height:100px; margin-top:80px; " >
+										<div class="col-sm-10">
+											<input type="text" style="height:50px;margin-top: 20px;"  class="form-control1" name="searchCity" placeholder="请输入搜索的城市(西安)" />
+										</div>
+										<div class="col-sm-2">
+											<input type="submit" style="height:50px;margin-top: 20px;width:80px;" class="form-control btn btn-danger" value="查找">
+										</div>
+									</div>
+								</form>
+						</div>
+			      <img src="/static/img/banner-2.jpg" alt="Image" />
+		    </li>
+		    <li>
+			    <div class="tm-banner-inner">
+					<h1 class="tm-banner-title">Proin <span class="tm-yellow-text">Gravida</span> Nibhvell</h1>
+					<p class="tm-banner-subtitle">Velit Auctor</p>
+					<form action="/home/localHouse/" method="POST">
+						<div style="width:600px;height:100px; margin-top:80px; " >
+							<div class="col-sm-10">
+								<input type="text" style="height:50px;margin-top: 20px;"  class="form-control1" name="searchCity" placeholder="请输入搜索的城市(西安)" />
+							</div>
+							<div class="col-sm-2">
+								<input type="submit" style="height:50px;margin-top: 20px;width:80px;" class="form-control btn btn-danger" value="查找">
+							</div>
+						</div>
+					</form>
+				</div>
+		      <img src="/static/img/banner-3.jpg" alt="Image" />
+		    </li>
+		  </ul>
+		</div>	
+	</section>
+
+	<!-- gray bg -->	
+	<section class="container tm-home-section-1" id="more">
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+	
+		<div class="section-margin-top">
+			<div class="row">				
+				<div class="tm-section-header">
+					<div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-6 col-md-6 col-sm-6"><h2 class="tm-section-title">Lorem Ipsum Dolor</h2></div>
+					<div class="col-lg-3 col-md-3 col-sm-3"><hr></div>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+						<img src="/static/img/index-03.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=北京" class="city_show">北京</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+					    <img src="/static/img/index-04.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=上海" class="city_show">上海</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+					    <img src="/static/img/index-05.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=深圳" class="city_show">深圳</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2 tm-home-box-2-right">
+					    <img src="/static/img/index-06.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=广州" class="city_show">广州</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+						<img src="/static/img/index-03.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=西安" class="city_show">西安</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+					    <img src="/static/img/index-04.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=天津" class="city_show">天津</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1">
+					<div class="tm-home-box-2">
+					    <img src="/static/img/index-05.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=南京" class="city_show">南京</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 top_1 top_1 top_1 top_1">
+					<div class="tm-home-box-2 tm-home-box-2-right">
+					    <img src="/static/img/index-06.jpg" alt="image" class="img-responsive">
+						<a href="/home/localHouse/?address=香港" class="city_show">香港</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>		
+	
+	<!-- white bg -->
+	<section class="tm-white-bg section-padding-bottom">
+		<div class="container">
+			<div class="row">
+
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Popular Packages</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+				</div>
+				{% for house in houses %}
+					<div class="col-lg-6">
+						<div class="tm-home-box-3">
+							<div class="tm-home-box-3-img-container">
+								<a class="houselink" value="{{house.id}}" href="/home/houseDetailShow/?houseid={{house.id}}"><img src="{{ house.imgPath.url }}" style="height: 225px; width:250px;" alt="image" class="img-responsive"></a>
+							</div>
+							<div class="tm-home-box-3-info">
+								<p class="tm-home-box-3-description" style="height: 164px;">
+									{{house.houseFeatureDescript}}<br/>
+									<span style="padding-bottom: 5px;">
+										城市:{{house.cityAddr}}<br/>
+										价格:{{house.price}}
+									</span>
+
+								</p>
+
+								<div class="tm-home-box-2-container">
+									<p  class="tm-home-box-2-link"><i values="{{ house.id }}" id="clickLike{{ house.id }}" class="fa fa-heart tm-home-box-2-icon border-right clickLike" onclick="changeLNum(this);"></i></p>
+									<p  class="tm-home-box-2-link"><span id="LikeNum{{house.id}}"  class="tm-home-box-2-description box-3">{{ house.Like_num }}</span></p>
+								</div>
+							</div>
+					</div>
+			     </div>
+
+				{% endfor %}
+
+			</div>		
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+		// HTML document is loaded. DOM is ready.
+		function changeLNum(change) {
+
+		var houes=$(change).attr("values");
+		console.log(houes);
+		$.ajax({
+			url:"/home/Collection/",
+			type:"POST",
+			data:{
+			    "houes":houes
+			},
+			success :function (arg) {
+				data=jQuery.parseJSON(arg);
+				//num 表示当前点赞的人数
+				//sign 标记当前的用户是否点赞  0未点赞，1点赞
+				num=data["num"];
+				sign=data["sign"];
+				console.log(num,sign)
+				if(sign)
+				{
+				    console.log("if","1");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:red;"})
+				}
+				else
+				{
+				    console.log("if","0");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:black;"})
+				}
+				$("#LikeNum"+houes).html(num);
+
+            },
+            error:function () {
+
+            }
+			}
+		)
+    }
+		function likeSign () {
+			var houseID=[];
+
+            $('.houselink').each(function () {
+
+		        houseID.push($(this).attr('value'));
+
+            });
+            console.log(houseID);
+            hID=JSON.stringify(houseID);
+            $.ajax({
+				url:"/home/myCollectionStatus/",
+				type:"POST",
+
+				data:{
+				    "hID":hID,
+                },
+				dataType:"json",
+				success:function (arg) {
+				    console.log(arg);
+				    var idList=arg["houseIdList"];
+				    console.log(toString.call(idList));
+				    $('.clickLike').each(function (){
+						if (jQuery.inArray(Number($(this).attr('values')), idList)!=-1) {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:red;"})
+                        }
+                        else {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:black;"})
+                        }
+                    })
+                },
+				error:function (arg) {
+					console.log(arg)
+                }
+			});
+        }
+
+		$(function() {
+		    var nichen=$('#nichen').html();
+
+		    if (nichen!=""){
+		        likeSign()
+			}
+
+			$('#hotelCarTabs a').click(function (e) {
+			  e.preventDefault()
+			  $(this).tab('show')
+			})
+        	$('.date').datetimepicker({
+            	format: 'MM/DD/YYYY'
+            });
+            $('.date-time').datetimepicker();
+
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+		  	$('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+		  	});
+		});
+
+		$(window).load(function() {
+
+		    $('.flexslider').flexslider({
+			    controlNav: false
+		    });
+	  	});
+	</script>
+{% endblock %}

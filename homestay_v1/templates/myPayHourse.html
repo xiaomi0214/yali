@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block section %}
+
+<section class="tm-white-bg section-padding-bottom" style="margin-top: 70px;">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">历 史 订 单</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+
+
+			<div >
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td>房屋特色介绍</td>
+						<td>价格</td>
+						<td>合计</td>
+						<td>住房时间</td>
+						<td>操作-评论</td>
+					</tr>
+					{% for HouseBookobj  in HouseBookobjs %}
+					<tr>
+						<td><a href="/home/houseDetailShow/?houseid={{HouseBookobj.house.id}}">{{HouseBookobj.house.houseFeatureDescript}}</a></td>
+						<td>{{HouseBookobj.oneprice}}</td>
+						<td>{{HouseBookobj.allprice}}</td>
+						<td>{{HouseBookobj.startDate|date:"Y/m/d"}}-{{HouseBookobj.endDate|date:"Y/m/d"}}</td>
+						<td><button class="btn btn-success"><a  href="/home/myPayHourseComment/?houseBookId={{HouseBookobj.house.id}}">评论</a></button></td>
+					</tr>
+					{% endfor %}
+				</table>
+
+
+
+			</div>
+		</div>
+
+	</section>
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}

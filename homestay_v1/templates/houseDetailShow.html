@@ -1,0 +1,352 @@
+{% extends "base.html" %}
+{% block css %}
+<style type="text/css">
+
+#houseFeatureDescript{
+    background-color: whitesmoke;
+    height: 270px;
+    padding-left: 24px;
+    padding-top: 33px;
+    font-size: 19px !important;
+    line-height: 36px !important;
+}
+#houseDescript{
+    width: 80% !important;
+    float: left !important;
+    height: 337px;
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 17px !important;
+}
+#pictureShow{
+    margin-top: 40px;
+}
+#pictureshows{
+    width: 240px;
+    height: 157px;
+    padding-left: 27px;
+}
+#pictureHead{
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    letter-spacing: -0.2px !important;
+    padding-top: 20px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    line-height: 40px !important;
+}
+#cityAddr{
+    font-size: 19px !important;
+    margin-top: 20px;
+}
+.contenthead{
+    padding-top: 40px;
+}
+.fontContent{
+    font-size: 19px;
+    margin-left: 50px;
+    padding-top: 20px;
+}
+.fontContentUser{
+    font-size: 24px;
+    margin-top: 40px;
+    padding-left: 60px;
+}
+.fontContentInf{
+    font-size: 19px;
+    margin-top: 25px;
+    margin-left: 94px;
+    width: 67%;
+}
+#bookForm{
+
+    position: fixed;
+    top: 50%;
+    margin-top: -96px;
+
+    width: 18%;
+    height: 304px;
+    right: 40px;
+
+    border: 1px black solid;
+}
+.inputForm{
+
+    height: 42px;
+    width: 176px;
+    margin-left: 50px;
+    font-size: 17px;
+    margin-top: 30px;
+}
+
+#allcontent{
+    bottom: 0;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.row{
+    margin-right: -32px;
+    margin-left: 26px;
+}
+
+.provideset{
+    float: left;
+    width: 203px;
+    height: 46px;
+    /*background-color: red;*/
+    font-size: 19px;
+}
+.fornSize{
+    font-size: 19px;
+}
+</style>
+
+
+
+{% endblock %}
+
+{% block section %}
+<div id="allcontent">
+    <div class="container-fluid"  >
+        <div class="row">
+            <div class="col-sm-9 " >
+
+                <div>
+                     <div class="row" style="margin-top: 28px;">
+
+                        <div class="col-sm-4 " id="houseFeatureDescript">
+                            {{ houseobj.houseFeatureDescript }}
+                        </div>
+                        <div class="col-sm-7"  style="margin-left: 30px;">
+
+                            <img src="{{ houseobj.imgPath.url }}" style="width: 90%;height:270px;" />
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div  >
+                    <div class="row">
+                        <div class="col-sm-11" style="margin-top:60px;">
+                            <div class="row" >
+                                <div class="col-sm-7"  id="houseDescript" >
+                                    &nbsp;<p style="font-size: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{houseobj.houseDescript}}</p>
+                                    <p style="    margin-top: 30px;"> <span style=" margin-right: 77px; margin-left: 15px; margin-top: 30px;">{{ houseobj.houseType }}</span><span>{{houseobj.zhufangType}} </span></p>
+                                    <div style="padding-top: 10px;">
+                                    <div class="col-sm-3">
+                                        最多住{{houseobj.houseMaxPeople}}人
+                                    </div>
+                                    <div class="col-sm-2">
+                                        {{houseobj.houseMaxPeople}}间卧室
+                                    </div>
+                                    <div class="col-sm-2">
+                                        {{ houseobj.towBed }}单人床
+                                    </div>
+                                    <div class="col-sm-2">
+                                        {{ houseobj.oneBed }}双人床
+                                    </div>
+                                    <div class="col-sm-3">
+                                        {{houseobj.showerNum}}间卫生间
+                                    </div>
+
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr/>
+                                <div style="height:300px;" id="pictureShow">
+                                    <p id="pictureHead">参观这套公寓</p>
+                                    <div style="margin-top: 30px;">
+                                        {% for pictureobj in pictureobjs %}
+                                            <div style="float:left">
+                                                <div >
+                                                    <img src="{{pictureobj.imgPath.url}}" id="pictureshows" />
+
+                                                </div>
+                                                <div style="padding-left: 50px;">
+                                                    {{pictureobj.imgDescript}}
+                                                </div>
+                                            </div>
+
+                                        {% endfor %}
+                                    </div>
+
+                                    <!--<p style="float:none ;padding-bottom: 10px;">浏览所有的图片</p>-->
+
+                                </div>
+                                <hr/>
+                                <div style="margin-bottom: 128px;">
+                                    <!--<div style="height:380px;background-color:hotpink">-->
+                                    <p id="pictureHead">提供的设施</p>
+                                    <div style="padding-top: 50px;">
+                                        {% for Sheprovided in Sheprovideds %}
+
+                                            <div class="provideset">
+                                                <p class="fontContent" >{{ Sheprovided }}</p>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <hr/>
+
+                                <div >
+                                    <!--<div style="height:200px;background-color:darkred">-->
+                                    <p id="pictureHead">地址</p>
+                                    <div >
+                                        <p id="cityAddr" class="fornSize">{{houseobj.cityAddr}}</p>
+                                        <p style="padding-top: 16px;font-size: 19px !important;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{houseobj.houseAddr}}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div >
+                                    <!--<div style="height:200px;background-color:palevioletred">-->
+                                    <p id="pictureHead">房东信息</p>
+                                    <div class="contenthead">
+                                        <div  class="fontContent">昵称:{{houseobj.people.nichen}}</div>
+                                        <div  class="fontContent">注册日期:{{houseobj.people.successCreateTime |date:"Y-m-d"}}</div>
+                                        <div></div>
+                                    </div>
+
+                                </div>
+                                <hr/>
+                                <div style="margin-bottom: 160px;">
+                                      <!--<div style="height:250px;background-color:bisque">-->
+                                    <p id="pictureHead">房客须知</p>
+                                    <div class="contenthead">
+                                        <div>
+                                            {% for knowInformation in knowInformations %}
+                                            <div>
+                                                <p class="fontContent" style="float:left;width: 250px;">{{knowInformation}} </p>
+                                            </div>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div >
+                                    <!--<div style="height:200px;background-color:bisque">-->
+                                    <p id="pictureHead">可使用的其他区域</p>
+                                    <div class="contenthead">
+                                        <div>
+                                            {% for userArea in userAreas %}
+                                            <div>
+                                                <p class="fontContent">{{userArea}} </p>
+                                            </div>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div style="margin-bottom: 180px;">
+                                    <!--<div style="height:370px;background-color:bisque">-->
+                                    <p id="pictureHead">房屋守则</p>
+                                    <div class="contenthead">
+                                        <div>
+                                            {% for banrule in banrules %}
+                                            <div>
+                                                <p class="fontContent" style="float: left">{{banrule}} </p>
+                                            </div>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+
+                                <div style="margin-bottom: 140px;">
+                                    <!--<div style="height:100px;background-color:saddlebrown">-->
+
+                                    <p id="pictureHead">用户评价</p>
+
+                                    <div class="contenthead">
+                                        <div>
+                                            {% for comment in comments %}
+                                            <div>
+                                                <p class="fontContentUser">{{comment.people.nichen}} </p>
+                                                <div class="fontContentInf">
+                                                    <p >{{comment.content}} </p>
+                                                </div>
+
+                                            </div>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div style="height:100px;"></div>
+
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-2">
+                <div class="col-sm-2" >
+                    <div id="bookForm" class="form-group" >
+                        <form method="POST" action="/home/bookSubmit/?houseid={{houseobj.id}}" class="form-horizontal"  id="dateForm">
+                            <div class="form-group">
+                                <input class="inputForm" type="text" class="layui-input" placeholder="入住时间" id="startData" name="startData" />
+                                <input type="text" class="layui-input inputForm" placeholder="退房时间" id="endData" name="endData" />
+                                <p class="inputForm">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:{{houseobj.price}}(元/天)</p>
+                                <input type="hidden" value="{{houseobj.price}}"   name="eachPrice" id="eachPrice" />
+                                <input class="inputForm" type="button" value="预定" onclick="booktime();" />
+                                <p class="inputForm"   >{{msg}}</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block script %}
+<script >
+lay('#version').html('-v'+ laydate.v);
+//日期时间选择器
+laydate.render({
+  elem: '#startData'
+  ,type: 'date'
+  ,theme: '#393D49'
+});
+</script>
+<script >
+lay('#version').html('-v'+ laydate.v);
+//日期时间选择器
+laydate.render({
+  elem: '#endData'
+  ,type: 'date'
+  ,theme: '#393D49'
+});
+</script>
+
+<script >
+    function booktime() {
+        console.log('booktime')
+        var startDate=$('#startData').val();
+        var endData=$('#endData').val();
+        console.log(startDate,endData)
+        if (startDate && endData){
+            $('#dateForm').submit();
+        }
+        else{
+            console.log("时间不能为空")
+            $('#msg').html('时间不能为空');
+        }
+    }
+
+</script>
+{% endblock %}

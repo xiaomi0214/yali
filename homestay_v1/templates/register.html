@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block section %}
+	<section style="margin-bottom: 300px;margin-top: 120px;">
+		<div class="container " >
+			<div class="row">
+				<legend>用户注册</legend>
+				<form action="/home/register/" method="post" id="form_set">
+					<div class="form-group">
+						<input type="text" id="contact_name" class="form-control" name="nichen" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="昵称" />
+					</div>
+					<div class="form-group">
+						<input type="email" id="contact_email" class="form-control" name="email" style="width:45%;		height:45px	;	margin-left: 130px	;	margin-top: 30px;" placeholder="email" />
+					</div>
+					<div class="form-group">
+						<button style="margin-left: 130px;margin-top:40px;"  class="btn btn-danger col-sm-1" type="submit" name="submit">提交</button>
+						<p style="color:indianred;margin-left:240px;font-size:18px;margin-top:40px;" class="col-sm-7">{{ error }}</p>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+{% endblock %}

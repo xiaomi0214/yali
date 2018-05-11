@@ -1,0 +1,329 @@
+{% extends "base.html" %}
+
+{% block section %}
+<!--<section style="margin-bottom: 130px;margin-top: 150px;">-->
+<!--<legend style="margin-left: 30px;">筛选</legend>-->
+	<!--<div class="container " style="border:1px gray solid ;">-->
+	<!--<ul class="li_post_not">-->
+		<!--<li >-->
+		<!--<label class="col-sm-2 control-label ">卧室</label>-->
+		  <!--<div class="col-sm-10  col_height   " >-->
+		      <!--<label class="col-sm-1"  >-->
+		      	<!--<input type="radio" value="不限" name="sheshi">不限-->
+			    <!--</label>-->
+			    <!--<div class="col-sm-9 " >-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="一居" name="sheshi">一居-->
+			    <!--</label>-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="二居" name="sheshi">二居-->
+			    <!--</label>-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="三居" name="sheshi">三居-->
+			    <!--</label>-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="二居" name="sheshi">二居-->
+			    <!--</label>-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="三居" name="sheshi">三居-->
+			    <!--</label>-->
+			    <!--<label class="col-sm-3 ">-->
+			      <!--<input type="radio" value="四居及以上" name="sheshi">四居以上-->
+			    <!--</label>-->
+			    <!--</div>-->
+		  <!--</div>-->
+		<!--</li>-->
+
+		<!--<li>-->
+			<!--<label class="col-sm-2 control-label ">价格（元）</label>-->
+            <!--<div class="col-sm-10  col_height ">-->
+			    <!--<label class="col-sm-1 "  >-->
+			      <!--<input type="radio" value="不限" name="sheshi">不限-->
+			    <!--</label>-->
+			    <!--<div class="col-sm-9 " >-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="100以下" name="sheshi">100以下-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="二居" name="sheshi">100-200-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="三居" name="sheshi">200-300-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="四居及以上" name="sheshi">300-500-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="四居及以上" name="sheshi">500以上-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="三居" name="sheshi">200-300-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="四居及以上" name="sheshi">300-500-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="四居及以上" name="sheshi">500以上-->
+					<!--</label>-->
+			  	<!--</div>-->
+			<!--</div>-->
+		<!--</li>-->
+        <!--<li>-->
+		  <!--<label class="col-sm-2 control-label ">房型</label>-->
+          <!--<div class="col-sm-10  col_height ">-->
+            <!--<label class="col-sm-1 "  >-->
+              <!--<input type="radio" value="不限" name="sheshi">不限-->
+            <!--</label>-->
+            <!--<div class="col-sm-9 " >-->
+            <!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="普通公寓" name="sheshi">普通公寓-->
+            <!--</label>-->
+            <!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="酒店式公寓" name="sheshi">酒店式公寓-->
+            <!--</label>-->
+            <!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="家庭旅馆" name="sheshi">家庭旅馆-->
+            <!--</label>-->
+			<!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="公寓型住宅" name="sheshi">公寓型住宅-->
+            <!--</label>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</li>-->
+		<!--<li>-->
+		  <!--<label class="col-sm-2 control-label ">租房类型</label>-->
+          <!--<div class="col-sm-10  col_height ">-->
+            <!--<label class="col-sm-1 "  >-->
+              <!--<input type="radio" value="不限" name="sheshi">不限-->
+            <!--</label>-->
+            <!--<div class="col-sm-9 " >-->
+            <!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="合租" name="sheshi">合租-->
+            <!--</label>-->
+            <!--<label class="col-sm-3 ">-->
+              <!--<input type="radio" value="独租" name="sheshi">独租-->
+            <!--</label>-->
+
+            <!--</div>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+				<!--<label class="col-sm-2 control-label ">床型</label>-->
+		  		<!--<div class="col-sm-10  col_height ">-->
+					<!--<label class="col-sm-1 "  >-->
+					  <!--<input type="radio" value="不限" name="sheshi">不限-->
+					<!--</label>-->
+					<!--<div class="col-sm-9 " >-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="100以下" name="sheshi">双人床-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="二居" name="sheshi">单人床-->
+					<!--</label>-->
+					<!--</div>-->
+	  		<!--</div>-->
+        <!--</li>-->
+		<!--<li>-->
+				<!--<label class="col-sm-2 control-label ">最多房客人数</label>-->
+		  		<!--<div class="col-sm-10  col_height ">-->
+					<!--<label class="col-sm-1 "  >-->
+					  <!--<input type="radio" value="不限" name="sheshi">不限-->
+					<!--</label>-->
+					<!--<div class="col-sm-9 " >-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="1" name="sheshi">1人-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="2" name="sheshi">2人-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="3" name="sheshi">3人-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="4" name="sheshi">4人-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="5" name="sheshi">5人-->
+					<!--</label>-->
+					<!--<label class="col-sm-3 ">-->
+					  <!--<input type="radio" value="6" name="sheshi">6人-->
+					<!--</label>-->
+					<!--</div>-->
+	  		<!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+				<!--<label class="col-sm-2 control-label "></label>-->
+		  		<!--<div class="col-sm-10  col_height ">-->
+					<!---->
+				<!---->
+					<!--<label class="col-sm-10 " >-->
+					  <!--<input type="submit" value="确定" class="btn col-sm-offset-12" style="height:40px;width:80px;margin-top: 30px;">-->
+					<!--</label>-->
+					<!---->
+	  		<!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+    <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+<div style="margin-top: 150px">
+	<legend style="margin-left: 30px;">城市---{{searchCity}}</legend>
+</div>
+<section class="tm-white-bg section-padding-bottom" style="margin-top: 100px">
+
+		<div class="container">
+			<div class="row">
+				{% for house  in houses %}
+
+				<div class="col-lg-6">
+					<div class="tm-home-box-3">
+						<div class="tm-home-box-3-img-container">
+							<a class="houselink" value="{{house.id}}" href="/home/houseDetailShow/?houseid={{house.id}}"><img src="{{ house.imgPath.url }}" style="height: 225px;width:250px;" alt="image" class="img-responsive"></a>
+						</div>
+						<div class="tm-home-box-3-info">
+							<p class="tm-home-box-3-description" style="height: 164px;">
+								<!--{{ house.houseFeatureDescript }}-->
+								{{house.houseFeatureDescript}}<br/>
+									<span style="padding-bottom: 5px;">
+										城市:{{house.cityAddr}}<br/>
+										价格:{{house.price}}
+									</span>
+							</p>
+					        <div class="tm-home-box-2-container">
+								<p  class="tm-home-box-2-link"><i values="{{ house.id }}" id="clickLike{{ house.id }}" class="fa fa-heart tm-home-box-2-icon border-right clickLike" onclick="changeLNum(this);"></i></p>
+								<p  class="tm-home-box-2-link"><span id="LikeNum{{house.id}}"  class="tm-home-box-2-description box-3">{{ house.Like_num }}</span></p>
+
+								<!--<p  class="tm-home-box-2-link"><i values="{{ house.id }}" id="clickLike" class="fa fa-heart tm-home-box-2-icon border-right" onclick="changeLNum();"></i></p>-->
+								<!--<p  class="tm-home-box-2-link"><span id="LikeNum" class="tm-home-box-2-description box-3">{{ house.Like_num }}</span></p>-->
+							</div>
+						</div>
+					</div>
+			     </div>
+
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+
+    // function changeLNum() {
+		// var houes=$('#clickLike').attr("values");
+		// // console.log(houes);
+		// $.ajax({
+		// 	url:"/home/Collection/",
+		// 	type:"POST",
+		// 	data:{
+		// 	    "houes":houes
+		// 	},
+		// 	success :function (arg) {
+		// 		data=jQuery.parseJSON(arg);
+		// 		//num 表示当前点赞的人数
+		// 		//sign 标记当前的用户是否点赞  0未点赞，1点赞
+		// 		num=data["num"];
+		// 		sign=data["sign"];
+		// 		if(sign)
+		// 		{
+		// 		    console.log("if","1");
+		// 		    $('#clickLike').attr({style:"color:red;"})
+		// 		}
+		// 		else
+		// 		{
+		// 		    console.log("if","0");
+		// 		    $('#clickLike').attr({style:"color:black;"})
+		// 		}
+		// 		$("#LikeNum").html(num);
+    //
+    //         },
+    //         error:function () {
+    //
+    //         }
+		// 	}
+		// )
+    // }
+    function changeLNum(change) {
+
+		var houes=$(change).attr("values");
+		console.log(houes);
+		$.ajax({
+			url:"/home/Collection/",
+			type:"POST",
+			data:{
+			    "houes":houes
+			},
+			success :function (arg) {
+				data=jQuery.parseJSON(arg);
+				//num 表示当前点赞的人数
+				//sign 标记当前的用户是否点赞  0未点赞，1点赞
+				num=data["num"];
+				sign=data["sign"];
+				console.log(num,sign)
+				if(sign)
+				{
+				    console.log("if","1");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:red;"})
+				}
+				else
+				{
+				    console.log("if","0");
+				    $("#clickLike"+$(change).attr('values')).attr({style:"color:black;"})
+				}
+				$("#LikeNum"+houes).html(num);
+
+            },
+            error:function () {
+
+            }
+			}
+		)
+    }
+    function likeSign () {
+			var houseID=[];
+
+            $('.houselink').each(function () {
+
+		        houseID.push($(this).attr('value'));
+
+            });
+            console.log(houseID);
+            hID=JSON.stringify(houseID);
+            $.ajax({
+				url:"/home/myCollectionStatus/",
+				type:"POST",
+
+				data:{
+				    "hID":hID,
+                },
+				dataType:"json",
+				success:function (arg) {
+				    console.log(arg);
+				    var idList=arg["houseIdList"];
+				    console.log(toString.call(idList));
+				    $('.clickLike').each(function (){
+						if (jQuery.inArray(Number($(this).attr('values')), idList)!=-1) {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:red;"})
+                        }
+                        else {
+                            $("#clickLike"+$(this).attr('values')).attr({style: "color:black;"})
+                        }
+                    })
+                },
+				error:function (arg) {
+					console.log(arg)
+                }
+			});
+        }
+        $(function() {
+		    var nichen=$('#nichen').html();
+
+		    if (nichen!=""){
+		        likeSign()
+			}
+        })
+
+</script>
+{% endblock %}
